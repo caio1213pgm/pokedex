@@ -6,15 +6,13 @@ let offset = 0;
 const maxPoke = 151;
 
 function descricaoPoke(pokemonId) {
-  const descricao = document.getElementById(pokemonId)
-  if(descricao.style.display === "grid"){
-    descricao.style.display = "none"
-  }
-  else{
-    descricao.style.display = "grid"
+  const descricao = document.getElementById(pokemonId);
+  if (descricao.style.display === "flex") {
+    descricao.style.display = "none";
+  } else {
+    descricao.style.display = "flex";
   }
 }
-
 
 function carregarPokemons(offset, limit) {
   function PokemonParaHtml(pokemon) {
@@ -35,14 +33,43 @@ function carregarPokemons(offset, limit) {
                       <img src="${pokemon.pokeImg}" alt="${pokemon.name}">
                   </div>
 
-                  <button type="button" class="btnDescricao" id="btnDD" onclick="descricaoPoke(${pokemon.pokeId})">Descrição</button>
+                  <button type="button" class="btnDescricao" id="btnDD" onclick="descricaoPoke(${
+                    pokemon.pokeId
+                  })">Descrição</button>
                   <div class="divDescricao" id="${pokemon.pokeId}">
+                  <div class="descriptionDetails">
                         <h3>Peso: ${pokemon.peso}kg</h3>
-                        <h3>Altura: ${pokemon.altura.toFixed()}Cm</h3>
-                        <h3>Pontos de vida: ${pokemon.vida}</h3>
+                        <input type="range" id="cowbell" name="cowbell" min="0" max="1000" value="${
+                          pokemon.peso
+                        }" step="10" />
+                  </div>
+                  <div class="descriptionDetails">
+                        <h3>HP: ${pokemon.vida}</h3>
+                        <input type="range" id="cowbell" name="cowbell" min="0" max="100" value="${
+                          pokemon.vida
+                        }" step="10" />
+                  </div>  
+                  <div class="descriptionDetails">
                         <h3>Ataque: ${pokemon.ataque}</h3>
+                        <input type="range" id="cowbell" name="cowbell" min="0" max="100" value="${
+                          pokemon.ataque
+                        }" step="10" />
+                  </div>
+                  <div class="descriptionDetails">
                         <h3>Defesa: ${pokemon.defesa}</h3>
+                        <input type="range" id="cowbell" name="cowbell" min="0" max="100" value="${
+                          pokemon.defesa
+                        }" step="10" />
+                  </div>
+                  <div class="descriptionDetails">
                         <h3>Velocidade: ${pokemon.velocidade}</h3>
+                        <input type="range" id="cowbell" name="cowbell" min="0" max="150" value="${
+                          pokemon.velocidade
+                        }" step="10" />
+                  </div>
+                        <button type="button" class="btnDescricao" id="btnDD" onclick="descricaoPoke(${
+                          pokemon.pokeId
+                        })">Fechar</button>
                   </div>
 
   

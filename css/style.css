@@ -35,6 +35,7 @@ body{
 }
 .poke-card{
     display: flex;
+    z-index: 0;
     flex-direction: column;
     margin: 0.5rem;
     padding: 1rem;
@@ -99,13 +100,25 @@ body{
     width: 7rem;
 }
 .divDescricao{
-    display: none;
+    position: absolute;
+    z-index: 1;
 
-    margin-top: 10px;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    background-color: #f0f0f0d8;
-    color: #010101dc;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    margin-left: 25px;
+
+    background-color: #353535d8;
+    color: #ffffff;
+}
+.descriptionDetails{
+    display: flex;
+    gap: 1rem;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
